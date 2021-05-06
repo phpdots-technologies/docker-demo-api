@@ -1,0 +1,24 @@
+version: '3.1'
+services:
+
+  application:
+    build: .
+    container_name: banxel_members_application
+    restart: always
+    volumes:
+      - ./:/var/www
+    links:
+      - mysql:mysql
+    ports:
+      - "8080:80"
+    env_file: .env
+
+  mysql:
+    image: mysql:5.7
+    container_name: banxel_members_mysql
+    restart: always
+    volumes:
+      - ./mysql-data:/var/lib/mysql
+    environment:
+      MYSQL_DATABASE: banxel_application
+      MYSQL_ROOT_PASSWORD: vE3aL9YExPatfd3xhEe7e3wR
