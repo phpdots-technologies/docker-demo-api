@@ -3,7 +3,7 @@ services:
 
   application:
     build: .
-    container_name: banxel_members_application
+    container_name: demo_api
     restart: always
     volumes:
       - ./:/var/www
@@ -15,10 +15,10 @@ services:
 
   mysql:
     image: mysql:5.7
-    container_name: banxel_members_mysql
+    container_name: demo_api_mysql
     restart: always
     volumes:
       - ./mysql-data:/var/lib/mysql
     environment:
-      MYSQL_DATABASE: banxel_application
-      MYSQL_ROOT_PASSWORD: vE3aL9YExPatfd3xhEe7e3wR
+      MYSQL_DATABASE: lumen_api
+      MYSQL_ROOT_PASSWORD: 
