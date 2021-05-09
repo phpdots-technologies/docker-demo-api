@@ -17,6 +17,6 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
-$router->get('country-list', 'ApiController@getCountry');
-$router->get('user/{id}', 'ApiController@getUser');
-$router->post('user/{id}', 'ApiController@updateUser');
+$router->get('api/country-list', 'ApiController@getCountry');
+$router->get('api/user/{id}', 'ApiController@getUser');
+$router->post('api/user/{id}', 'ApiController@updateUser');
