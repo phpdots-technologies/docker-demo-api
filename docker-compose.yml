@@ -21,4 +21,4 @@ services:
       - ./mysql-data:/var/lib/mysql
     environment:
       MYSQL_DATABASE: lumen_api
-      MYSQL_ROOT_PASSWORD: 
+      MYSQL_ROOT_PASSWORD: vE3aL9YExPatfd3xhEe7e3wR
