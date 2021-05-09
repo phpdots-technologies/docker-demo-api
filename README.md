@@ -1,24 +1,75 @@
-# Lumen PHP Framework
+# Demp Lumen API With Docker
 
-[![Build Status](https://travis-ci.org/laravel/lumen-framework.svg)](https://travis-ci.org/laravel/lumen-framework)
-[![Total Downloads](https://img.shields.io/packagist/dt/laravel/framework)](https://packagist.org/packages/laravel/lumen-framework)
-[![Latest Stable Version](https://img.shields.io/packagist/v/laravel/framework)](https://packagist.org/packages/laravel/lumen-framework)
-[![License](https://img.shields.io/packagist/l/laravel/framework)](https://packagist.org/packages/laravel/lumen-framework)
 
-Laravel Lumen is a stunningly fast PHP micro-framework for building web applications with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Lumen attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as routing, database abstraction, queueing, and caching.
+## Getting Started
 
-## Official Documentation
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-Documentation for the framework can be found on the [Lumen website](https://lumen.laravel.com/docs).
+### Prerequisites
 
-## Contributing
+To setup this project into your local machine, you need docker and docker-compose installed in your local development machine.
 
-Thank you for considering contributing to Lumen! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Install Docker
 
-## Security Vulnerabilities
+```
+sudo apt-get update
+sudo apt-get remove docker docker-engine docker.io
+sudo apt install docker.io
+sudo systemctl start docker
+sudo systemctl enable docker
+```
 
-If you discover a security vulnerability within Lumen, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+## Installation of local development copy new
 
-## License
+Clone this repo to your local machine. 
 
-The Lumen framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+```
+git clone https://github.com/phpdots-technologies/docker-demo-api.git
+
+or
+
+Get the clone url from https://github.com/phpdots-technologies/docker-demo-api
+```
+
+Generate .env file. Make sure you will update database connection as per your installed MySQL credentials.
+
+```
+cp .env.local .env
+```
+
+Run start.sh file which run docker containers for web server and database server.
+
+```
+sh ./build/local/start.sh
+```
+
+### Linux only steps.
+
+Last command will provide web server docker container IP. This IP will be used to run website in browser.
+
+We have to update *APP_URL* in .env file according to web server docker container IP . We have to update *APP_URL* then execute below two commands.
+```
+sh ./build/local/stop.sh
+sh ./build/local/start.sh
+```
+
+Use below command to stop docker containers.
+
+```
+sh ./build/local/stop.sh
+```
+
+Here, containers will be start into background so we need to monitor logs till it not complete installation as per below steps.
+
+List of docker containers.
+
+```
+docker ps
+```
+
+View log of web server (Banxel website server) docker container. Here, replace *DOCKER-CONTAINER-ID* with actual docker container ID found in previous step.
+
+```
+docker logs [DOCKER-CONTAINER-ID]
+```
