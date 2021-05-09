@@ -1,7 +1,7 @@
 # Backend REST API With Docker Container
 
 
-## Demo Via Lumen(8.X)(https://lumen.laravel.com/docs/8.x)
+## Using Lumen(8.X)(https://lumen.laravel.com/docs/8.x)
 
 ### Getting Started
 
