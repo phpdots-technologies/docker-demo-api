@@ -70,7 +70,7 @@ List of docker containers.
 docker ps
 ```
 
-View log of web server (Banxel website server) docker container. Here, replace *DOCKER-CONTAINER-ID* with actual docker container ID found in previous step.
+View log of web server docker container. Here, replace *DOCKER-CONTAINER-ID* with actual docker container ID found in previous step.
 
 ```
 docker logs [DOCKER-CONTAINER-ID]
