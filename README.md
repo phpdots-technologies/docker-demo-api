@@ -75,3 +75,10 @@ View log of web server (Banxel website server) docker container. Here, replace *
 ```
 docker logs [DOCKER-CONTAINER-ID]
 ```
+
+### API List
+1) Get Country List: {APIENDPOINT}/api/country-list (GET Method)
+
+2) Get User Profile Data: {APIENDPOINT}/api/user/{id} (GET Method)
+
+3) Update User Profile Data: {APIENDPOINT}/api/user/{id} (POST Method)
